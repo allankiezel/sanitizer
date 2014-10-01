@@ -1,0 +1,26 @@
+{
+    "name": "allankiezel/sanitizer",
+    "description": "String sanitizer with custom sanitizer capability.",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Allan Kiezel",
+            "email": "alan.kiezel@gmail.com"
+        }
+    ],
+    "keywords": ["testing", "laravel", "factorygirl", "stubs"],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "AllanKiezel\\Sanitizer": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
+
