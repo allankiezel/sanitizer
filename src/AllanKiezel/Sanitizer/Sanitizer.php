@@ -7,7 +7,7 @@ use AllanKiezel\Sanitizer\Exceptions\SanitizerNotFoundException;
 /**
  * Class Sanitizer
  *
- * @package LevelUp\Support
+ * @package AllanKiezel\Sanitizer
  * @author Allan Kiezel <allan.kiezel@gmail.com>
  */
 abstract class Sanitizer {
@@ -41,9 +41,7 @@ abstract class Sanitizer {
         foreach ($fields as $field => $value) {
 
             // Skip if no rules exists for this field
-            if ( ! isset($rules[$field])) {
-                continue;
-            }
+            if ( ! isset($rules[$field])) continue;
 
             $fields[$field] = $this->applySanitizers($value, $rules[$field]);
         }
@@ -89,7 +87,7 @@ abstract class Sanitizer {
      */
     public function sanitizerExists($sanitizer)
     {
-        return isset($this->sanitizers[$sanitizer]) or function_exists($sanitizer);
+        return $this->customSanitizerExists($sanitizer) or function_exists($sanitizer);
     }
 
     /**
@@ -147,8 +145,7 @@ abstract class Sanitizer {
      */
     private function applySanitizers($value, $rules)
     {
-        foreach ($this->splitSanitizers($rules) as $sanitizer)
-        {
+        foreach ($this->splitSanitizers($rules) as $sanitizer) {
             $value = $this->applySanitizer($value, $sanitizer);
         }
 
