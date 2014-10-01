@@ -1,6 +1,7 @@
 {
     "name": "allankiezel/sanitizer",
     "description": "String sanitizer with custom sanitizer capability.",
+    "keywords": ["sanitizer", "laravel"],
     "license": "MIT",
     "version": "1.0.0",
     "authors": [
@@ -9,7 +10,6 @@
             "email": "alan.kiezel@gmail.com"
         }
     ],
-    "keywords": ["testing", "laravel", "factorygirl", "stubs"],
     "require": {
         "php": ">=5.4.0"
     },
